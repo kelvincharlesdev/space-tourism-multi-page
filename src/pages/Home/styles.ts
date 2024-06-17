@@ -2,7 +2,11 @@ import styled from 'styled-components';
 
 export const Content = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
-  height: 500px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
 `;
 
 export const Title = styled.p`
