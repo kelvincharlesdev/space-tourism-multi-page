@@ -14,28 +14,32 @@ describe(' Component <Button/>', () => {
     expect(button).toBeInTheDocument();
   });
 
-  it('must have variations', () => {
-    const { rerender } = render(
+  it('must have default(primary) variation', () => {
+    render(
       <ThemeProvider theme={theme}>
         <Button text="Button Deafult Primary" />
       </ThemeProvider>
     );
     const button = screen.getByRole('button');
+    expect(button).toHaveStyle(
+      `background-color: ${theme.colors.neutral.lightest}`
+    );
+  });
 
-    expect(button).toHaveStyle(`background-color: ${theme.colors.white}`);
-
-    rerender(
+  it('must have secondary variation', () => {
+    render(
       <ThemeProvider theme={theme}>
         <Button variation="secondary" text="Button Secondary" />
       </ThemeProvider>
     );
     const buttonSecondary = screen.getByRole('button');
-
     expect(buttonSecondary).toHaveStyle(
-      `background-color: ${theme.colors.gray100}`
+      `background-color: ${theme.colors.neutral.medium}`
     );
+  });
 
-    rerender(
+  it('must have tertiary variation', () => {
+    render(
       <ThemeProvider theme={theme}>
         <Button variation="tertiary" text="Button Tertiary" />
       </ThemeProvider>
@@ -44,7 +48,7 @@ describe(' Component <Button/>', () => {
 
     expect(buttonTeriary).toHaveStyle(`background-color: transparent`);
     expect(buttonTeriary).toHaveStyle(
-      `border: 0.125rem solid ${theme.colors.gray100};`
+      `border: 0.125rem solid ${theme.colors.neutral.medium};`
     );
   });
 
