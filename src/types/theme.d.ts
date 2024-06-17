@@ -4,6 +4,9 @@ type ColorNeutral = {
   primary: string;
   secondary: string;
   white: string;
+  gray: string;
+  gray100: string;
+  hover: string;
 };
 
 type FontWeight = {
@@ -17,10 +20,14 @@ type FontSize = {
   xs: string;
   sm: string;
   md: string;
+  medium: string;
   lg: string;
+  large: string;
   xl: string;
   xxl: string;
+  xxxl: string;
   giant: string;
+  xgiant: string;
   huge: string;
 };
 
