@@ -1,9 +1,17 @@
 import 'styled-components';
 
 type ColorNeutral = {
+  lightest: string;
+  light: string;
+  medium: string;
+};
+
+type ColorMain = {
   primary: string;
   secondary: string;
-  white: string;
+};
+type ColorHover = {
+  dark: string;
 };
 
 type FontWeight = {
@@ -17,10 +25,14 @@ type FontSize = {
   xs: string;
   sm: string;
   md: string;
+  medium: string;
   lg: string;
+  large: string;
   xl: string;
   xxl: string;
+  xxxl: string;
   giant: string;
+  xgiant: string;
   huge: string;
 };
 
@@ -36,7 +48,11 @@ type ColorGradient = {
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    colors: ColorNeutral;
+    colors: {
+      main: ColorMain;
+      neutral: ColorNeutral;
+      hover: ColorHover;
+    };
     fonts: {
       family: FontFamilly;
       weight: FontWeight;
