@@ -1,20 +1,19 @@
 import { DefaultTheme } from 'styled-components';
 
-const solids = {
-  white: '#ffffff',
-  gray: '#85868b',
-  gray100: '#363941'
-};
-
 export const theme: DefaultTheme = {
-  ...solids,
   colors: {
-    primary: '#0B0D17',
-    secondary: '#D0D6F9',
-    white: solids.white,
-    gray: solids.gray,
-    gray100: solids.gray100,
-    hover: 'rgba(255, 255, 255, 0.1)'
+    main: {
+      primary: '#0B0D17',
+      secondary: '#D0D6F9'
+    },
+    neutral: {
+      lightest: '#ffffff',
+      light: '#85868b',
+      medium: '#363941'
+    },
+    hover: {
+      dark: 'rgba(255, 255, 255, 0.1)'
+    }
   },
   fonts: {
     family: {

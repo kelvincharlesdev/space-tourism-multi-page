@@ -6,12 +6,12 @@ const variations = {
   primary: css<I.ButtonProps>`
     width: 144px;
     height: 144px;
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.neutral.lightest};
     transition: ease-in-out 0.3s;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.neutral.lightest};
 
     &:hover {
-      box-shadow: 0 0 0 5.5rem ${({ theme }) => theme.colors.hover};
+      box-shadow: 0 0 0 5.5rem ${({ theme }) => theme.colors.hover.dark};
     }
 
     @media (min-width: 768px) {
@@ -22,16 +22,16 @@ const variations = {
   secondary: css<I.ButtonProps>`
     width: 10px;
     height: 10px;
-    background-color: ${({ theme }) => theme.colors.gray100};
+    background-color: ${({ theme }) => theme.colors.neutral.medium};
     transition: ease-in-out 0.2s;
 
     &:hover,
     &:focus {
-      background-color: ${({ theme }) => theme.colors.gray};
+      background-color: ${({ theme }) => theme.colors.neutral.light};
     }
 
     &:active {
-      background-color: ${({ theme }) => theme.colors.white};
+      background-color: ${({ theme }) => theme.colors.neutral.lightest};
     }
 
     @media (min-width: 768px) {
@@ -43,17 +43,17 @@ const variations = {
     width: 56px;
     height: 56px;
     background-color: transparent;
-    border: 0.125rem solid ${({ theme }) => theme.colors.gray100};
-    color: ${({ theme }) => theme.colors.white};
+    border: 0.125rem solid ${({ theme }) => theme.colors.neutral.medium};
+    color: ${({ theme }) => theme.colors.neutral.lightest};
 
     &:hover {
-      border-color: ${({ theme }) => theme.colors.white};
+      border-color: ${({ theme }) => theme.colors.neutral.lightest};
     }
 
     &:active {
-      background-color: ${({ theme }) => theme.colors.white};
-      color: ${({ theme }) => theme.colors.white};
-      color: ${({ theme }) => theme.colors.primary};
+      background-color: ${({ theme }) => theme.colors.neutral.lightest};
+      color: ${({ theme }) => theme.colors.neutral.lightest};
+      color: ${({ theme }) => theme.colors.main.primary};
     }
 
     @media (min-width: 768px) {
