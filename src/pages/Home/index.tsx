@@ -1,9 +1,12 @@
+import { Button } from '../../components/Button';
+import { Header } from '../../components/Header';
 import * as S from './styles';
 
 export const Home = () => {
   return (
     <S.Content>
-      <S.Title>Testando</S.Title>
+      <Header />
+
       <Button text="EXPLORE" />
       <div style={{ display: 'flex', gap: ' 40px' }}>
         <Button variation="secondary" />

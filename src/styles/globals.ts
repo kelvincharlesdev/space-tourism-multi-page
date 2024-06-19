@@ -27,4 +27,16 @@ export const GlobalStyles = createGlobalStyle`
         border: none;
         outline: none;
     }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        padding:  0 24px;
+    }
 `;
