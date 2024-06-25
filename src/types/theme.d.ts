@@ -3,7 +3,9 @@ import 'styled-components';
 type ColorNeutral = {
   lightest: string;
   light: string;
+  regular: string;
   medium: string;
+  dark: string;
 };
 
 type ColorMain = {
@@ -11,6 +13,7 @@ type ColorMain = {
   secondary: string;
 };
 type ColorHover = {
+  light: string;
   dark: string;
 };
 

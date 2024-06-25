@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ModalContent = styled.div`
-  padding: 18px;
+  padding: 1.125rem;
 
   svg {
     cursor: pointer;
@@ -18,6 +18,6 @@ export const ModalContentLogo = styled.div`
 export const ModalNavigate = styled.nav`
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  margin-top: 81px;
+  gap: 2rem;
+  margin-top: 5.0625rem;
 `;

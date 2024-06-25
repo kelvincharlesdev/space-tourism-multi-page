@@ -1,38 +1,19 @@
-import * as S from './Header.styles';
-// import * as I from './Header.interface';
-
-import Modal from 'react-modal';
-
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { RiCloseLine } from 'react-icons/ri';
 import { useState } from 'react';
-import { menu } from '../../data/menu';
+import { useMediaQuery } from 'react-responsive';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-Modal.setAppElement('#root');
+import * as S from './Header.styles';
+import { SideBar } from './SideBar';
+import { Links } from './links';
 
-const customStyles = {
-  content: {
-    top: 0,
-    left: 'auto',
-    right: 0,
-    bottom: 0,
-    height: '100%',
-    minWidth: '254px',
-    marginRight: 0,
-    transform: 'none',
-    border: 'none',
-    overflowY: 'auto' as const,
-    backgroundColor: '#0B0D1726',
-    backdropFilter: 'blur(50px)',
-    padding: 0
-  },
-  overlay: {
-    backgroundColor: 'transparent'
-  }
-};
+import { menu } from '@/data/menu';
 
 export const Header = () => {
   const [modalIsOpem, setModalIsOpen] = useState<boolean>(false);
+
+  const isMobile = useMediaQuery({
+    query: '(max-width: 768px)'
+  });
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -44,31 +25,27 @@ export const Header = () => {
 
   return (
     <S.HeaderContainer>
-      <div className="container">
-        <S.HeaderContent>
-          <Modal isOpen={modalIsOpem} style={customStyles}>
-            <S.ModalContent>
-              <S.ModalContentLogo>
-                <RiCloseLine size={50} color="#D0D6F9" onClick={closeModal} />
-              </S.ModalContentLogo>
+      <S.HeaderNavigate>
+        <S.HeaderLogo>
+          <img src="src/assets/shared/logo.svg" alt="Imagem da Logo" />
+          <span className="horizontalRule"></span>
+        </S.HeaderLogo>
 
-              <S.ModalNavigate>
-                {menu.map(item => (
-                  <S.Link key={item.id} href={item.link}>
-                    <span>{item.number}</span>
-                    {item.label}
-                  </S.Link>
-                ))}
-              </S.ModalNavigate>
-            </S.ModalContent>
-          </Modal>
-
-          <S.HeaderLogo>
-            <img src="src/assets/shared/logo.svg" alt="Imagem da Logo" />
-          </S.HeaderLogo>
-          <GiHamburgerMenu size={30} color="#D0D6F9" onClick={openModal} />
-        </S.HeaderContent>
-      </div>
+        {isMobile ? (
+          <>
+            <GiHamburgerMenu size={30} color="#D0D6F9" onClick={openModal} />
+            <SideBar closeModal={closeModal} modalIsOpem={modalIsOpem} />
+          </>
+        ) : (
+          <S.HeaderNavigateLinks>
+            {menu.map(menu => (
+              <li key={menu.id}>
+                <Links menu={menu} />
+              </li>
+            ))}
+          </S.HeaderNavigateLinks>
+        )}
+      </S.HeaderNavigate>
     </S.HeaderContainer>
   );
 };

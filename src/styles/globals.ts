@@ -33,6 +33,10 @@ export const GlobalStyles = createGlobalStyle`
         color: inherit;
     }
 
+    ul {
+        list-style: none;
+    }
+
 
     .container {
         width: 100%;

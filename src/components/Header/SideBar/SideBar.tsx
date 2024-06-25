@@ -1,39 +1,20 @@
+import Modal from 'react-modal';
+import { RiCloseLine } from 'react-icons/ri';
+
 import * as S from './SideBar.styles';
 import * as I from './SideBar.interface';
 
-import { RiCloseLine } from 'react-icons/ri';
-import { menu } from '../../../data/menu';
-import Modal from 'react-modal';
+import { menu } from '@/data/menu';
 import { Links } from '../links';
+import { customStylesModalMenu } from '@/const';
 
 Modal.setAppElement('#root');
-
-const customStyles = {
-  content: {
-    top: 0,
-    left: 'auto',
-    right: 0,
-    bottom: 0,
-    height: '100%',
-    minWidth: '254px',
-    marginRight: 0,
-    transform: 'none',
-    border: 'none',
-    overflowY: 'auto' as const,
-    backgroundColor: '#0B0D1726',
-    backdropFilter: 'blur(50px)',
-    padding: 0
-  },
-  overlay: {
-    backgroundColor: 'transparent'
-  }
-};
 
 export const SideBar = ({ closeModal, modalIsOpem }: I.SideBarProps) => {
   return (
     <Modal
       isOpen={modalIsOpem}
-      style={customStyles}
+      style={customStylesModalMenu}
       onRequestClose={closeModal}
     >
       <S.ModalContent>

@@ -9,9 +9,12 @@ export const theme: DefaultTheme = {
     neutral: {
       lightest: '#ffffff',
       light: '#85868b',
-      medium: '#363941'
+      regular: '#494a53',
+      medium: '#363941',
+      dark: 'rgba(255, 255, 255, 0.05)'
     },
     hover: {
+      light: 'rgba(255, 255, 255, 0.5)',
       dark: 'rgba(255, 255, 255, 0.1)'
     }
   },
