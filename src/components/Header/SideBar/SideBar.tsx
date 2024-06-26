@@ -10,21 +10,29 @@ import { customStylesModalMenu } from '@/const';
 
 Modal.setAppElement('#root');
 
-export const SideBar = ({ closeModal, modalIsOpem }: I.SideBarProps) => {
+export const SideBar = ({
+  closeModal,
+  modalIsOpen: modalIsOpen
+}: I.SideBarProps) => {
   return (
     <Modal
-      isOpen={modalIsOpem}
+      isOpen={modalIsOpen}
       style={customStylesModalMenu}
       onRequestClose={closeModal}
     >
-      <S.ModalContent>
+      <S.ModalContent data-testid="sideBar">
         <S.ModalContentLogo>
-          <RiCloseLine size={50} color="#D0D6F9" onClick={closeModal} />
+          <RiCloseLine
+            size={50}
+            color="#D0D6F9"
+            onClick={closeModal}
+            data-testid="close"
+          />
         </S.ModalContentLogo>
 
         <S.ModalNavigate>
           {menu.map(menu => (
-            <Links menu={menu} />
+            <Links key={menu.id} menu={menu} />
           ))}
         </S.ModalNavigate>
       </S.ModalContent>
