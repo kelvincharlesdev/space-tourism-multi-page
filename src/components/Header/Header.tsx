@@ -24,7 +24,7 @@ export const Header = () => {
   };
 
   return (
-    <S.HeaderContainer>
+    <S.HeaderContainer data-testid="header-container">
       <S.HeaderNavigate>
         <S.HeaderLogo>
           <img src="src/assets/shared/logo.svg" alt="Imagem da Logo" />
@@ -34,7 +34,7 @@ export const Header = () => {
         {isMobile ? (
           <>
             <GiHamburgerMenu size={30} color="#D0D6F9" onClick={openModal} />
-            <SideBar closeModal={closeModal} modalIsOpem={modalIsOpem} />
+            <SideBar closeModal={closeModal} modalIsOpen={modalIsOpem} />
           </>
         ) : (
           <S.HeaderNavigateLinks>
