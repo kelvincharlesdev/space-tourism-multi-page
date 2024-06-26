@@ -1,4 +1,4 @@
 export interface SideBarProps {
-  modalIsOpem: boolean;
+  modalIsOpen: boolean;
   closeModal: () => void;
 }

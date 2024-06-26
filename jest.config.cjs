@@ -11,7 +11,8 @@ module.exports = {
   },
   moduleNameMapper: {
     '^.+\\.svg$': 'jest-svg-transformer',
-    '\\.(css|less|scss)$': 'identity-obj-proxy'
+    '\\.(css|less|scss)$': 'identity-obj-proxy',
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
   collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}']
 };
