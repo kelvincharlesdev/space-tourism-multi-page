@@ -8,7 +8,7 @@ const variations = {
     height: 144px;
     background-color: ${({ theme }) => theme.colors.neutral.lightest};
     transition: ease-in-out 0.3s;
-    color: ${({ theme }) => theme.colors.neutral.lightest};
+    color: ${({ theme }) => theme.colors.main.primary};
 
     &:hover {
       box-shadow: 0 0 0 5.5rem ${({ theme }) => theme.colors.hover.dark};

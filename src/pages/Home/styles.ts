@@ -2,11 +2,17 @@ import styled from 'styled-components';
 
 export const Content = styled.div`
   background-color: ${({ theme }) => theme.colors.main.primary};
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 3.125rem;
+  min-height: 100vh;
+`;
+
+export const HomeWrapper = styled.div`
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 export const Title = styled.p`
