@@ -12,7 +12,7 @@ export const HeaderContainer = styled.div`
   }
   @media (min-width: 1080px) {
     height: 136px;
-    margin-top: 2.5rem;
+    padding-top: 2.5rem;
   }
 `;
 
