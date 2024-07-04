@@ -62,7 +62,7 @@ describe('Component <Model/>', () => {
   it('Must contain style props ', () => {
     render(
       <ThemeProvider theme={theme}>
-        <MainLayout imageMobile="/teste">
+        <MainLayout bgImageMobile="/teste">
           <h1>Testando</h1>
         </MainLayout>
       </ThemeProvider>

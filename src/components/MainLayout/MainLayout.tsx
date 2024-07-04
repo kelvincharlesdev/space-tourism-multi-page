@@ -4,15 +4,15 @@ import { Header } from '../Header';
 
 export const MainLayout = ({
   children,
-  image,
-  imageMobile,
-  imageTablet
+  bgImage,
+  bgImageMobile,
+  bgImageTablet
 }: I.MainLayoutProps) => {
   return (
     <S.MainLayoutWrapper
-      image={image}
-      imageTablet={imageMobile}
-      imageMobile={imageTablet}
+      $bgImage={bgImage}
+      $bgImageTablet={bgImageTablet}
+      $bgImageMobile={bgImageMobile}
       data-testid="main-layout"
     >
       <S.LayoutContent>

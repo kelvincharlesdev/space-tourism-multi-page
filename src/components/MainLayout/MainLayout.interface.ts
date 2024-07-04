@@ -1,15 +1,14 @@
 import { HTMLAttributes } from 'react';
 
-export interface MainLayoutProps extends HTMLAttributes<HTMLAnchorElement> {
+export interface MainLayoutProps extends HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
-  image?: string;
-  imageMobile?: string;
-  imageTablet?: string;
+  bgImage?: string;
+  bgImageMobile?: string;
+  bgImageTablet?: string;
 }
-
-export interface MainLayoutWrapperProps
-  extends HTMLAttributes<HTMLAnchorElement> {
-  image?: string;
-  imageMobile?: string;
-  imageTablet?: string;
+export interface MainLayoutStyleProps extends HTMLAttributes<HTMLElement> {
+  children: React.ReactNode;
+  $bgImage?: string;
+  $bgImageMobile?: string;
+  $bgImageTablet?: string;
 }
