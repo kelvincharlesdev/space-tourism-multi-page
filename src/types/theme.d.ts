@@ -12,6 +12,10 @@ type ColorMain = {
   primary: string;
   secondary: string;
 };
+type ColorText = {
+  primary: string;
+};
+
 type ColorHover = {
   light: string;
   dark: string;
@@ -54,6 +58,7 @@ declare module 'styled-components' {
     colors: {
       main: ColorMain;
       neutral: ColorNeutral;
+      text: ColorText;
       hover: ColorHover;
     };
     fonts: {

@@ -1,1 +1,1 @@
-
+export interface HomeProps {}

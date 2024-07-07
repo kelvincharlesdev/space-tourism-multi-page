@@ -13,6 +13,9 @@ export const theme: DefaultTheme = {
       medium: '#363941',
       dark: 'rgba(255, 255, 255, 0.05)'
     },
+    text: {
+      primary: '#d0d6f9'
+    },
     hover: {
       light: 'rgba(255, 255, 255, 0.5)',
       dark: 'rgba(255, 255, 255, 0.1)'

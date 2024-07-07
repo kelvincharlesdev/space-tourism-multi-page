@@ -23,14 +23,6 @@ export const HeaderNavigate = styled.nav`
   cursor: pointer;
   height: 100%;
   width: 100%;
-  padding: 1.5rem;
-
-  @media (min-width: 768px) {
-    padding: 0 0 0 2.5rem;
-  }
-  @media (min-width: 1080px) {
-    padding: 0 0 0 4rem;
-  }
 `;
 
 export const HeaderLogo = styled.figure`
@@ -77,7 +69,7 @@ export const HeaderLogo = styled.figure`
 
   @media (min-width: 1400px) {
     .horizontalRule {
-      width: 550px;
+      width: 605px;
     }
   }
 `;

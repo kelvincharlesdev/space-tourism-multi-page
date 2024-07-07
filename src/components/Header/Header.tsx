@@ -12,7 +12,7 @@ export const Header = () => {
   const [modalIsOpem, setModalIsOpen] = useState<boolean>(false);
 
   const isMobile = useMediaQuery({
-    query: '(max-width: 768px)'
+    query: '(max-width: 767px)'
   });
 
   const openModal = () => {
