@@ -1,7 +1,11 @@
-import { Home } from './pages/Home';
+import { SpaceTourismRoutes } from './routes/routes';
 
 function App() {
-  return <Home />;
+  return (
+    <>
+      <SpaceTourismRoutes />
+    </>
+  );
 }
 
 export default App;
