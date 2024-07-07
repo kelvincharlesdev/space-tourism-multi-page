@@ -2,6 +2,8 @@ import * as S from './Home.styles';
 
 import { Button } from '@/components/Button';
 import { MainLayout } from '@/components/MainLayout';
+import { routes } from '@/routes';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
   return (
@@ -23,7 +25,9 @@ export const Home = () => {
             </p>
           </S.HomeDescription>
           <S.ContentButton>
-            <Button text="EXPLORE" />
+            <Link to={routes.destination}>
+              <Button text="EXPLORE" />
+            </Link>
           </S.ContentButton>
         </S.Content>
       </S.Main>
