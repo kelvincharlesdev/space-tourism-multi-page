@@ -70,7 +70,7 @@ Foi usado um figma fornecio pelo Frontend Mentor! [Projeto](https://www.figma.co
 
 Algumas tecnologias auxiliaram no desenvolvimento do projeto, dentre elas:
 
-- Em andamento!
+- react-router-dom: 6.24.1,
 
 ## Ferramentas
 

@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Link = styled.a`
+export const LinkMenu = styled(Link)`
   color: ${({ theme }) => theme.colors.neutral.lightest};
   font-size: ${({ theme }) => theme.fonts.size.sm};
   font-family: ${({ theme }) => theme.fonts.family.tertiary};

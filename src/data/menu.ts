@@ -10,24 +10,24 @@ export const menu: MenuItem[] = [
     id: 1,
     number: '00',
     label: 'HOME',
-    link: '/#home'
+    link: '/home'
   },
   {
     id: 2,
     number: '01',
     label: 'DESTINATION',
-    link: '/#destination'
+    link: '/destination'
   },
   {
     id: 3,
     number: '02',
     label: 'CREW',
-    link: '/#crew'
+    link: '/crew'
   },
   {
     id: 4,
     number: '03',
     label: 'TECHNOLOGY',
-    link: '/#technology'
+    link: '/technology'
   }
 ];
