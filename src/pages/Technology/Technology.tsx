@@ -1,13 +1,9 @@
-import { MainLayout } from '@/components/MainLayout';
+import * as S from './Technology.styles';
 
 export const Technology = () => {
   return (
-    <MainLayout
-      bgImage="src/assets/technology/background-technology-desktop.jpg"
-      bgImageTablet="src/assets/technology/background-technology-tablet.jpg"
-      bgImageMobile="src/assets/technology/background-technology-mobile.jpg"
-    >
+    <S.Main>
       <h1>TESTANDO Technology</h1>
-    </MainLayout>
+    </S.Main>
   );
 };

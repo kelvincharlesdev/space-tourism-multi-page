@@ -1,13 +1,9 @@
-import { MainLayout } from '@/components/MainLayout';
+import * as S from './Destination.styles';
 
 export const Destination = () => {
   return (
-    <MainLayout
-      bgImage="src/assets/destination/background-destination-desktop.jpg"
-      bgImageTablet="src/assets/destination/background-destination-tablet.jpg"
-      bgImageMobile="src/assets/destination/background-destination-mobile.jpg"
-    >
+    <S.Main>
       <h1>TESTANDO DESTINATION</h1>
-    </MainLayout>
+    </S.Main>
   );
 };

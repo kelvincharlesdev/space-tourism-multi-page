@@ -1,13 +1,9 @@
-import { MainLayout } from '@/components/MainLayout';
+import * as S from './Crew.styles';
 
 export const Crew = () => {
   return (
-    <MainLayout
-      bgImage="src/assets/crew/background-crew-desktop.jpg"
-      bgImageTablet="src/assets/crew/background-crew-tablet.jpg"
-      bgImageMobile="src/assets/crew/background-crew-mobile.jpg"
-    >
+    <S.Main>
       <h1>TESTANDO Crew</h1>
-    </MainLayout>
+    </S.Main>
   );
 };

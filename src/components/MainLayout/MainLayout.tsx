@@ -1,24 +1,14 @@
 import * as S from './MainLayout.styles';
-import * as I from './MainLayout.interface';
 import { Header } from '../Header';
+import { Outlet } from 'react-router-dom';
 
-export const MainLayout = ({
-  children,
-  bgImage,
-  bgImageMobile,
-  bgImageTablet
-}: I.MainLayoutProps) => {
+export const MainLayout = () => {
   return (
-    <S.MainLayoutWrapper
-      $bgImage={bgImage}
-      $bgImageTablet={bgImageTablet}
-      $bgImageMobile={bgImageMobile}
-      data-testid="main-layout"
-    >
+    <S.MainLayoutWrapper data-testid="main-layout">
       <S.LayoutContent>
         <Header />
-        {children}
       </S.LayoutContent>
+      <Outlet />
     </S.MainLayoutWrapper>
   );
 };
