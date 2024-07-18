@@ -1,15 +1,24 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  min-height: calc(100vh - 136px);
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  background-image: url('src/assets/home/background-home-mobile.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (min-width: 668px) {
+    background-image: url('src/assets/home/background-home-tablet.jpg');
+  }
 
   @media (min-width: 1024px) {
     justify-content: end;
+    background-image: url('src/assets/home/background-home-desktop.jpg');
   }
 `;
 
@@ -21,6 +30,8 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  padding: 0 24px;
 
   @media (min-width: 1024px) {
     flex-direction: row;

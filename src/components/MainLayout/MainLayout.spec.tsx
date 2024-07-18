@@ -2,6 +2,7 @@ import { render, screen, within } from '@testing-library/react';
 import { MainLayout } from './MainLayout';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';
+import { MemoryRouter } from 'react-router-dom';
 
 jest.mock('react-modal', () => {
   const Modal = ({
@@ -21,11 +22,11 @@ jest.mock('react-modal', () => {
 describe('Component <Model/>', () => {
   it('Must render component', () => {
     render(
-      <ThemeProvider theme={theme}>
-        <MainLayout>
-          <h1>Testando</h1>
-        </MainLayout>
-      </ThemeProvider>
+      <MemoryRouter>
+        <ThemeProvider theme={theme}>
+          <MainLayout />
+        </ThemeProvider>
+      </MemoryRouter>
     );
 
     const mainLayout = screen.getByTestId('main-layout');
@@ -34,41 +35,15 @@ describe('Component <Model/>', () => {
 
   it('Must render the Header component inside the MainLayout component ', () => {
     render(
-      <ThemeProvider theme={theme}>
-        <MainLayout>
-          <h1>Testando</h1>
-        </MainLayout>
-      </ThemeProvider>
+      <MemoryRouter>
+        <ThemeProvider theme={theme}>
+          <MainLayout />
+        </ThemeProvider>
+      </MemoryRouter>
     );
 
     const mainLayout = screen.getByTestId('main-layout');
     const header = within(mainLayout).getByTestId('header-container');
     expect(header).toBeInTheDocument();
-  });
-
-  it('Must render Children ', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <MainLayout>
-          <h1>Testando</h1>
-        </MainLayout>
-      </ThemeProvider>
-    );
-
-    const children = screen.getByText('Testando');
-    expect(children).toBeInTheDocument();
-  });
-
-  it('Must contain style props ', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <MainLayout bgImageMobile="/teste">
-          <h1>Testando</h1>
-        </MainLayout>
-      </ThemeProvider>
-    );
-
-    const mainLayout = screen.getByTestId('main-layout');
-    expect(mainLayout).toHaveStyle('background-image: url(/teste)');
   });
 });
