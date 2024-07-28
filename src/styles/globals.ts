@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     button {
         cursor: pointer;
         transition: 0.2s ease-out;
-        background-color: none;
+        background-color: transparent;
         border: none;
     }
 
