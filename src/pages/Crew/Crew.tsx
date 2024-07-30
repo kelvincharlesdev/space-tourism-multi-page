@@ -1,13 +1,55 @@
 import { MainLayout } from '@/components/MainLayout';
 
+import * as S from './Crew.styles';
+import { Button } from '@/components/Button';
+import { crews } from '@/data/crew';
+import { useState } from 'react';
+
 export const Crew = () => {
+  const [isActive, setIsActive] = useState<number>(1);
+
   return (
     <MainLayout
       bgImage="src/assets/crew/background-crew-desktop.jpg"
       bgImageTablet="src/assets/crew/background-crew-tablet.jpg"
       bgImageMobile="src/assets/crew/background-crew-mobile.jpg"
     >
-      <h1>TESTANDO Crew</h1>
+      <S.WrapperCrew>
+        <S.Title>02 MEET YOUR CREW</S.Title>
+
+        <S.ContentInfoCrew>
+          <div>
+            {crews
+              .filter(crew => crew.id === isActive)
+              .map(crew => (
+                <S.InfoContainer key={crew.id}>
+                  <h3>{crew.role}</h3>
+                  <h2>{crew.name}</h2>
+                  <p>{crew.description}</p>
+                </S.InfoContainer>
+              ))}
+
+            <S.ContentPagineted>
+              {crews.map(crew => (
+                <Button
+                  key={crew.id}
+                  isActive={isActive === crew.id}
+                  onClick={() => setIsActive(crew.id)}
+                  variation="secondary"
+                />
+              ))}
+            </S.ContentPagineted>
+          </div>
+
+          {crews
+            .filter(crew => crew.id === isActive)
+            .map(crew => (
+              <S.ContentImage>
+                <img src={crew.image} alt={crew.name} />
+              </S.ContentImage>
+            ))}
+        </S.ContentInfoCrew>
+      </S.WrapperCrew>
     </MainLayout>
   );
 };
