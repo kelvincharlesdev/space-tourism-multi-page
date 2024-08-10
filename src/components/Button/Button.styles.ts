@@ -22,16 +22,13 @@ const variations = {
   secondary: css<I.ButtonProps>`
     width: 10px;
     height: 10px;
-    background-color: ${({ theme }) => theme.colors.neutral.medium};
+    background-color: ${({ theme, isActive }) =>
+      isActive ? theme.colors.neutral.lightest : theme.colors.neutral.medium};
     transition: ease-in-out 0.2s;
 
     &:hover,
     &:focus {
       background-color: ${({ theme }) => theme.colors.neutral.light};
-    }
-
-    &:active {
-      background-color: ${({ theme }) => theme.colors.neutral.lightest};
     }
 
     @media (min-width: 768px) {
