@@ -4,7 +4,7 @@ import { destinations } from '@/data/destinations';
 import { useState } from 'react';
 
 export const Destination = () => {
-  const [isActive, setIsActive] = useState<number>(1);
+  const [showActive, setShowActive] = useState<number>(1);
 
   return (
     <MainLayout
@@ -19,7 +19,7 @@ export const Destination = () => {
 
         <S.NavigationDestination>
           {destinations
-            .filter(destination => destination.id === isActive)
+            .filter(destination => destination.id === showActive)
             .map(destination => (
               <S.ContentImage key={destination.id}>
                 <img src={destination.img} alt={destination.title} />
@@ -31,8 +31,8 @@ export const Destination = () => {
               {destinations.map(destination => (
                 <li key={destination.id}>
                   <S.ItemPaginated
-                    onClick={() => setIsActive(destination.id)}
-                    isActive={destination.id === isActive}
+                    onClick={() => setShowActive(destination.id)}
+                    isActive={destination.id === showActive}
                   >
                     {destination.title}
                   </S.ItemPaginated>
@@ -42,7 +42,7 @@ export const Destination = () => {
 
             <S.ItensDestination>
               {destinations
-                .filter(destination => destination.id === isActive)
+                .filter(destination => destination.id === showActive)
                 .map(destination => (
                   <>
                     <S.InfoDestination>

@@ -6,7 +6,7 @@ import { crews } from '@/data/crew';
 import { useState } from 'react';
 
 export const Crew = () => {
-  const [isActive, setIsActive] = useState<number>(1);
+  const [showActive, setShowActive] = useState<number>(1);
 
   return (
     <MainLayout
@@ -20,7 +20,7 @@ export const Crew = () => {
         <S.ContentInfoCrew>
           <div>
             {crews
-              .filter(crew => crew.id === isActive)
+              .filter(crew => crew.id === showActive)
               .map(crew => (
                 <S.InfoContainer key={crew.id}>
                   <h3>{crew.role}</h3>
@@ -33,8 +33,8 @@ export const Crew = () => {
               {crews.map(crew => (
                 <Button
                   key={crew.id}
-                  isActive={isActive === crew.id}
-                  onClick={() => setIsActive(crew.id)}
+                  isActive={showActive === crew.id}
+                  onClick={() => setShowActive(crew.id)}
                   variation="secondary"
                 />
               ))}
@@ -42,7 +42,7 @@ export const Crew = () => {
           </div>
 
           {crews
-            .filter(crew => crew.id === isActive)
+            .filter(crew => crew.id === showActive)
             .map(crew => (
               <S.ContentImage>
                 <img src={crew.image} alt={crew.name} />
