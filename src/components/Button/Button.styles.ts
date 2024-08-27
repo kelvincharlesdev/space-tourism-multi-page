@@ -39,18 +39,15 @@ const variations = {
   tertiary: css<I.ButtonProps>`
     width: 56px;
     height: 56px;
-    background-color: transparent;
+
+    background-color: ${({ theme, isActive }) =>
+      isActive ? theme.colors.neutral.lightest : 'transparent'};
     border: 0.125rem solid ${({ theme }) => theme.colors.neutral.medium};
-    color: ${({ theme }) => theme.colors.neutral.lightest};
+    color: ${({ theme, isActive }) =>
+      isActive ? theme.colors.main.primary : theme.colors.neutral.lightest};
 
     &:hover {
       border-color: ${({ theme }) => theme.colors.neutral.lightest};
-    }
-
-    &:active {
-      background-color: ${({ theme }) => theme.colors.neutral.lightest};
-      color: ${({ theme }) => theme.colors.neutral.lightest};
-      color: ${({ theme }) => theme.colors.main.primary};
     }
 
     @media (min-width: 768px) {
